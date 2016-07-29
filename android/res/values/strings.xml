@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">a_game_of_life</string>
+    <string name="game_title">A Game of Life</string>
+
+    <string name="btn_tap_to_begin">Begin Living</string>
+    <string name="btn_start_game">Start Game</string>
+    <string name="btn_tutorial">Tutorial</string>
+    <string name="btn_options">Options</string>
+    <string name="btn_achievements">Achievements</string>
+</resources>
