@@ -20,4 +20,7 @@
     <string name="options_defaults_label">Restore Defaults</string>
     <string name="options_reset_label">Reset Game</string>
 
+    <string name="mode_sel_1player">1P</string>
+    <string name="mode_sel_2player">2P</string>
+
 </resources>
