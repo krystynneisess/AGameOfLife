@@ -21,14 +21,15 @@ public class MainMenuActivity extends Activity {
         Button btnOptions = (Button) findViewById(R.id.mmaBTNoptions);
         Button btnAchievements = (Button) findViewById(R.id.mmaBTNachievements);
 
-//        btnStart.setOnClickListener(generateButtonListener(ModeSelectActivity.class));
-//        btnTutorial.setOnClickListener(generateButtonListener(TutorialActivity.class));
-//        btnOptions.setOnClickListener(generateButtonListener(OptionsActivity.class));
-//        btnAchievements.setOnClickListener(generateButtonListener(AchievementsActivity.class));
+        btnStart.setOnClickListener(generateButtonListener(context, ModeSelectActivity.class));
+//        btnTutorial.setOnClickListener(generateButtonListener(context, TutorialActivity.class));
+        btnOptions.setOnClickListener(generateButtonListener(context, OptionsActivity.class));
+//        btnAchievements.setOnClickListener(generateButtonListener(context, AchievementsActivity
+// .class));
 
-        btnStart.setOnClickListener(generateButtonListener(context, TitleActivity.class));
+//        btnStart.setOnClickListener(generateButtonListener(context, TitleActivity.class));
         btnTutorial.setOnClickListener(generateButtonListener(context, TitleActivity.class));
-        btnOptions.setOnClickListener(generateButtonListener(context, TitleActivity.class));
+//        btnOptions.setOnClickListener(generateButtonListener(context, TitleActivity.class));
         btnAchievements.setOnClickListener(generateButtonListener(context, TitleActivity.class));
     }
 

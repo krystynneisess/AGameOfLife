@@ -5,8 +5,19 @@
     <string name="game_title">A Game of Life</string>
 
     <string name="btn_tap_to_begin">Begin Living</string>
+
     <string name="btn_start_game">Start Game</string>
     <string name="btn_tutorial">Tutorial</string>
     <string name="btn_options">Options</string>
     <string name="btn_achievements">Achievements</string>
+
+    <string name="options_title">Options</string>
+    <string name="options_music_label">Music Volume</string>
+    <string name="options_sfx_label">Sound Effects Volume</string>
+    <string name="options_theme_label">Color Theme</string>
+    <string name="options_theme_dark_label">Dark</string>
+    <string name="options_theme_light_label">Light</string>
+    <string name="options_defaults_label">Restore Defaults</string>
+    <string name="options_reset_label">Reset Game</string>
+
 </resources>
