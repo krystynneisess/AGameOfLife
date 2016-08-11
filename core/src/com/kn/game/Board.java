@@ -29,6 +29,21 @@ class Board {
 		}
 	}
 
+	public Board(int length) {
+		len = length;
+		t = 0;
+		tiles = new Tile[len][len];
+		turnCap = 50;
+
+		for (int i = 0; i < len; i++) {
+			for (int j = 0; j < len; j++) {
+				tiles[i][j] = new Tile();
+				tiles[i][j].x = i;
+				tiles[i][j].y = j;
+			}
+		}
+	}
+
 	// Getters 
 	public int getLen() {
 		return len;
@@ -239,6 +254,43 @@ class Board {
 		return true;
 	}
 
+	public int getWinnerPid() {
+		if (!isGameOver()) {
+			return -1;
+		}
+
+		// for now, winner is the player who controls the most tiles.
+		int p1Count = 0;
+		int p2Count = 0;
+
+		for (int i = 0; i < len; i++) {
+			for (int j = 0; j < len; j++) {
+				Tile t = tiles[i][j];
+				int pid = t.getPid();
+
+				switch (pid) {
+					case 1:
+						p1Count++;
+						break;
+					case 2:
+						p2Count++;
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
+		if (p1Count > p2Count) {
+			return 1;
+		} else if (p1Count < p2Count) {
+			return 2;
+		} else { // p1Count == p2Count
+			return -1;
+		}
+
+	}
+
 	public void printBoard() {
 		System.out.println();
 		
@@ -264,28 +316,28 @@ class Board {
 		}
 	}
 
-	// 1-2-3!  testing, testing! putting it all together...!
-	public static void main(String[] args) {
-		Board b = new Board();
-		Player p1 = new Player(1, "Player1"); // uppercase
-		Player p2 = new Player(2, "Player2"); // lowercase
-		Species sR = new Species(0); // species r/R
-		Species sB = new Species(1); // species b/B
+	// 1-2-3!  testing, testing!
+	// public static void main(String[] args) {
+	// 	Board b = new Board();
+	// 	Player p1 = new Player(1, "Player1"); // uppercase
+	// 	Player p2 = new Player(2, "Player2"); // lowercase
+	// 	Species sR = new Species(0); // species r/R
+	// 	Species sB = new Species(1); // species b/B
 
-		b.performMove(p1, sR, 3, 3);
-		b.performMove(p2, sB, 6, 3);
-		b.printBoard();
+	// 	b.performMove(p1, sR, 3, 3);
+	// 	b.performMove(p2, sB, 6, 3);
+	// 	b.printBoard();
 
-		// print after 100 iterations.
-		for (int i = 0; i < 100; i++) {
-			b.advanceTime();
-		}
-			b.printBoard();
+	// 	// print after 100 iterations.
+	// 	for (int i = 0; i < 100; i++) {
+	// 		b.advanceTime();
+	// 	}
+	// 		b.printBoard();
 		
-		// print every iteration, for 10 iterations.
-		// for (int i = 0; i < 10; i++) {
-		// 	b.advanceTime();
-		// 	b.printBoard();
-		// }
+	// print every iteration, for 10 iterations.
+	// for (int i = 0; i < 10; i++) {
+	// 	b.advanceTime();
+	// 	b.printBoard();
+	// }
 	}
 }
