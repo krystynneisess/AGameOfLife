@@ -4,12 +4,14 @@ class Board {
 	int len; // board dimension is len x len
 	int t; // timestep
 	Tile[][] tiles;
+	private int turnCap;
 
 	// Constructors 
 	public Board() {
 		len = 10;
 		t = 0;
 		tiles = new Tile[len][len];
+		turnCap = 50;
 
 		// note to self--don't do this, it doesn't actually work: 
 		// for (Tile[] tileCol : tiles) {
@@ -217,6 +219,24 @@ class Board {
 		}
 
 		return count;
+	}
+
+	public boolean isGameOver() {
+		if (t >= turnCap || isFullBoard()) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isFullBoard() {
+		for (int i = 0; i < len; i++) {
+			for (int j = 0; j < len; j++) {
+				if (availableCoord(i, j)) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	public void printBoard() {
